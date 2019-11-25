@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="libs/fontawesome-free-5.8.1-web/css/all.min.css">
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="libs/jquery/jquery-3.3.1.js"></script>
+  <script src="js/script.js" defer></script>
+  <title>Document</title>
+
+
+</head>
+
+<body onload="flagChooseColor = document.getElementById('currentColor').style.backgroundColor;">
+  <section class="content">
+    <div class="content-left">
+      <div class="menu-block">
+        <p onclick="flagMove=false; flagTransform=false; flagPaintBucket=true;" onkeyup="if(event.keyCode == 32) { 
+            this.onclick();
+        }" class="menu-block__button c-117"><i class="fas fa-fill-drip"></i><span class="menu-block__span">Paint
+            bucket</span></p>
+        <p onclick="flagMove=false; flagTransform=false; document.getElementById('chooseColor').click()"
+          class="menu-block__button c-117 color"><i class="fas fa-eye-dropper"></i><span class="menu-block__span">Choose
+            color</span><input type="color" name="chooseColor" id="chooseColor" value="#сссссс"></p>
+                                            <p onclick="flagMove=true; flagTransform=false; flagPaintBucket=false;" class="menu-block__button c-117"><i
+                                                class="fas fa-arrows-alt"></i><span class="menu-block__span">Move</span>
+                                            </p>
+        <p onclick="flagMove=false; flagTransform=true; flagPaintBucket=false;" class="menu-block__button c-117"
+          class="menu-block__button c-117"><i class="fas fa-exchange-alt"></i><span
+            class="menu-block__span">Transform</span></p>
+      </div>
+      <div class="menu-block">
+        <p onclick="flagChooseColor = document.getElementById('currentColor').style.backgroundColor;" 
+          class="menu-block__button1 c-117 color2"><span style="background-color:#C4C4C4" id="currentColor" class="circle"></span><span
+            class="menu-block__span">Current
+            color</span></p>
+        <p onclick="flagChooseColor = document.getElementById('prevColor').style.backgroundColor;"
+          class="menu-block__button1 c-117"><span style="background-color:#41F795" id="prevColor" class="circle"></span><span
+            class="menu-block__span">Prev
+            color</span></p>
+        <p onclick="flagChooseColor = document.getElementById('oldColor').style.backgroundColor;"
+          class="menu-block__button1 c-117"><span style="background-color:#F74141" id="oldColor" class="circle"></span><span class="menu-block__span">old
+            color</span>
+        </p>
+        <p onclick="flagChooseColor = document.getElementById('oldAnotherColor').style.backgroundColor;"
+          class="menu-block__button1 c-117"><span style="background-color:#41B6F7" id="oldAnotherColor" class="circle"></span><span
+            class="menu-block__span">old color</span></p>
+      </div>
+    </div>
+    <div class="content-right">
+      <div class="c-204" id="thing1"></div>
+      <div class="c-189" id="thing2"></div>
+      <div class="c-191" id="thing3"></div> <br>
+      <div class="c-186" id="thing4"></div>
+      <div class="c-207" id="thing5"></div>
+      <div class="c-201" id="thing6"></div><br>
+      <div class="c-199" id="thing7"></div>
+      <div class="c-196" id="thing8"></div>
+      <div class="c-204" id="thing9"></div>
+    </div>
+  </section>
+  <script>
+    $('.menu-block__button').click( function (){
+      $('.menu-block__button').removeClass("active");
+      $(this).toggleClass("active");
+    });
+    $('.menu-block__button1').click( function (){
+      $('.menu-block__button1').removeClass("active");
+      $(this).toggleClass("active");
+    });
+    $('.color').click( function (){
+      $('.menu-block__button1').removeClass("active");
+      $('.color2').addClass("active");
+    });
+  </script>
+</body>
+
+</html>
